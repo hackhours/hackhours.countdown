@@ -1,56 +1,32 @@
 
 $(document).ready(function(){
+	/* ------------------------------------------------------------------------ */
+	/* Countdown */
+	/* ------------------------------------------------------------------------ */
+	
 	/* ---- Countdown timer ---- */
-	//alert(newdate);
 	$('#counter').countdown({	
-		timestamp : new Date(2013, 11, 1, 14, 0, 0, 0).getTime()
+		timestamp : new Date(2014, 04, 12, 18, 0, 0, 0).getTime()
 	});
-
-
-	/* ---- Animations ---- */
-
-	$('#links a').hover(
-		function(){ $(this).animate({ left: 3 }, 'fast'); },
-		function(){ $(this).animate({ left: 0 }, 'fast'); }
-	);
-
-	$('footer a').hover(
-		function(){ $(this).animate({ top: 3 }, 'fast'); },
-		function(){ $(this).animate({ top: 0 }, 'fast'); }
-	);
-
-
-	/* ---- Using Modernizr to check if the "required" and "placeholder" attributes are supported ---- */
-
-	if (!Modernizr.input.placeholder) {
-		$('.email').val('Input your e-mail address here...');
-		$('.email').focus(function() {
-			if($(this).val() == 'Input your e-mail address here...') {
-				$(this).val('');
+	
+	// Hide the countdown
+	$('#counter').hide();
+	// Add behaviour on body's click
+	$('body').click(function() {
+		$('#pre-counter').text('5');
+		var sec = $('#pre-counter').text();
+		var timer = setInterval(function() {
+			if (sec == 1) {
+				$('#pre-counter').remove();
+				$('#counter').fadeIn();
+				clearInterval(timer);
 			}
-		});
-	}
-
-	// for detecting if the browser is Safari
-	var browser = navigator.userAgent.toLowerCase();
-
-	if(!Modernizr.input.required || (browser.indexOf("safari") != -1 && browser.indexOf("chrome") == -1)) {
-		$('form').submit(function() {
-			$('.popup').remove();
-			if(!$('.email').val() || $('.email').val() == 'Input your e-mail address here...') {
-				$('form').append('<p class="popup">Please fill out this field.</p>');
-				$('.email').focus();
-				return false;
+			else{
+				$('#pre-counter').fadeOut('fast');
+				$('#pre-counter').text(--sec);
+				$('#pre-counter').fadeIn('fast');
 			}
-		});
-		$('.email').keydown(function() {
-			$('.popup').remove();
-		});
-		$('.email').blur(function() {
-			$('.popup').remove();
-		});
-	}
-
-
+		}, 1000);
+	});
 });
 

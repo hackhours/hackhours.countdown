@@ -6,7 +6,7 @@
 
 	<meta charset="utf-8" />
 
-	<title>Hack Hours - Countdown</title>
+	<title>HackHours - Countdown</title>
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="css/reset.css">
@@ -21,32 +21,36 @@
 	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-
-	<!-- jQuery and Modernizr-->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/modernizr.custom.js"></script>
-
-	<!-- Countdown timer and other animations -->
-	<script src="js/jquery.countdown.js"></script>
-	<script src="js/script.js"></script>
-
 </head>
 
-<body>
-
-	<header>
-		<h1></h1>
-		<p></p>
-		<div id="logo"></div>
-	</header>
-
-	<div id="main">
-		<div id="counter"></div>
-	</div>
-	<div id="hashtag">
-		<H1>#HackHours2013</H1>
-	</div>
-	<iframe id="tweet" src="https://www.livetweetapp.com/fr/live/AukC6G2RcuOH"></iframe>
-</body>
+	<body>
+		<div class="top">
+		</div>
+		<header id="header">
+			<h1></h1>
+			<p></p>
+			<div id="logo">
+				<img id="logo_hackhours" src="assets/images/logo_purple@medium.png" >
+				<img id="logo_cg" src="assets/images/LogoDepartement76.jpg" >
+			</div>
+		</header>
+		<div id="container">
+			<div id="row">
+				<div class="span6">
+					<div id="main">
+						<div id="counterContainer">
+							<div id="counter"></div>
+							<div id="pre-counter"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- jQuery-->
+		<script src="js/jquery.min.js"></script>
+		<!-- Countdown timer and other animations -->
+		<script src="js/jquery.countdown.js"></script>
+		<script src="js/script.js"></script>
+	</body>
 
 </html>

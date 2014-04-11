@@ -41,11 +41,11 @@
 			d = Math.floor(left / days);
 			updateDuo(0, 1, d);
 			left -= d*days;
-			
+
 			// Number of hours left
 			h = Math.floor(left / hours);
 			updateDuo(2, 3, h);
-			left -= h*hours;
+			left -= (h*hours);
 			
 			// Number of minutes left
 			m = Math.floor(left / minutes);
@@ -55,7 +55,7 @@
 			// Number of seconds left
 			s = left;
 			updateDuo(6, 7, s);
-			
+
 			// Calling an optional user supplied callback
 			options.callback(d, h, m, s);
 			
@@ -86,7 +86,7 @@
 				boxName = "HRS";
 			}
 			else if(this=="Minutes") {
-				boxName = "MNTS";
+				boxName = "MINS";
 			}
 			else {
 				boxName = "SECS";
